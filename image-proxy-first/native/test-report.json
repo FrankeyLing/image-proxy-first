@@ -1,0 +1,79 @@
+{
+  "version": "2.0",
+  "host_os": "Windows",
+  "host_architecture": "AMD64",
+  "measurement_scope": "Local synthetic files; warm OS cache; 3 runs per case; not a general latency guarantee.",
+  "image_regressions_passed": 9,
+  "measurements": [
+    {
+      "synthetic_input": "photo-like-12mp.jpg",
+      "pixels": [
+        4000,
+        3000
+      ],
+      "source_bytes": 7303370,
+      "preset": "fast",
+      "proxies": 1,
+      "wall_ms_median": 287.71,
+      "wall_ms_max": 289.6,
+      "native_ms_median": 271.19,
+      "proxy_bytes_each": [
+        85632
+      ]
+    },
+    {
+      "synthetic_input": "photo-like-12mp.jpg",
+      "pixels": [
+        4000,
+        3000
+      ],
+      "source_bytes": 7303370,
+      "preset": "balanced",
+      "proxies": 3,
+      "wall_ms_median": 569.36,
+      "wall_ms_max": 620.62,
+      "native_ms_median": 552.4,
+      "proxy_bytes_each": [
+        236882,
+        238569,
+        238969
+      ]
+    },
+    {
+      "synthetic_input": "text-screen-24mp.png",
+      "pixels": [
+        6000,
+        4000
+      ],
+      "source_bytes": 562015,
+      "preset": "fast",
+      "proxies": 1,
+      "wall_ms_median": 152.36,
+      "wall_ms_max": 153.57,
+      "native_ms_median": 135.62,
+      "proxy_bytes_each": [
+        91298
+      ]
+    },
+    {
+      "synthetic_input": "text-screen-24mp.png",
+      "pixels": [
+        6000,
+        4000
+      ],
+      "source_bytes": 562015,
+      "preset": "balanced",
+      "proxies": 3,
+      "wall_ms_median": 375.51,
+      "wall_ms_max": 394.38,
+      "native_ms_median": 358.66,
+      "proxy_bytes_each": [
+        185796,
+        224783,
+        33811
+      ]
+    }
+  ],
+  "linux_and_arm64_runtime_verified": false,
+  "linux_and_arm64_check": "Cross-compiled headers and format only; no target runtime available without starting another environment."
+}

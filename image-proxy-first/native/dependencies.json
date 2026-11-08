@@ -1,0 +1,21 @@
+{
+  "stb_commit": "2b2e64bc4778df6a06fbea3a5dbe61f7a76ecf19",
+  "files": {
+    "stb_image.h": {
+      "url": "https://raw.githubusercontent.com/nothings/stb/2b2e64bc4778df6a06fbea3a5dbe61f7a76ecf19/stb_image.h",
+      "sha256": "594c2fe35d49488b4382dbfaec8f98366defca819d916ac95becf3e75f4200b3"
+    },
+    "stb_image_resize2.h": {
+      "url": "https://raw.githubusercontent.com/nothings/stb/2b2e64bc4778df6a06fbea3a5dbe61f7a76ecf19/stb_image_resize2.h",
+      "sha256": "173e654634f6ccaad98f603e686ea212eec1fe8ea6d2a5e5e8056efa10ae3880"
+    },
+    "stb_image_write.h": {
+      "url": "https://raw.githubusercontent.com/nothings/stb/2b2e64bc4778df6a06fbea3a5dbe61f7a76ecf19/stb_image_write.h",
+      "sha256": "cbd5f0ad7a9cf4468affb36354a1d2338034f2c12473cf1a8e32053cb6914a05"
+    },
+    "LICENSE": {
+      "url": "https://raw.githubusercontent.com/nothings/stb/2b2e64bc4778df6a06fbea3a5dbe61f7a76ecf19/LICENSE",
+      "sha256": "bebfe904b14301657e4e5d655c811d51fd31b97c455b9cc2d8600d6bac6cff63"
+    }
+  }
+}

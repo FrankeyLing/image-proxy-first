@@ -1,0 +1,7 @@
+interface:
+  display_name: "先压缩再查看图像"
+  short_description: "预编译原生程序一次生成压缩代理、元信息及常用切图，随后直接查看"
+  default_prompt: "Use $image-proxy-first to inspect this image through a compressed proxy."
+
+policy:
+  allow_implicit_invocation: true

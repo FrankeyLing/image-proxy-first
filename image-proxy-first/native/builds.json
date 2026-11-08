@@ -1,0 +1,93 @@
+{
+  "compiler": "Zig 0.17.1",
+  "binaries": [
+    {
+      "platform": "windows-x64",
+      "target": "x86_64-windows-gnu",
+      "bytes": 817152,
+      "sha256": "5d20a2d27bd0300c2a9772bbe7ad582f66a91741efa5a22be0d59eb610564d34",
+      "build_seconds": 9.086,
+      "runtime_tested_on_this_host": true,
+      "command": [
+        "zig",
+        "c++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "-s",
+        "-target",
+        "x86_64-windows-gnu",
+        "native/image_proxy.cpp",
+        "-o",
+        "bin/windows-x64/image-proxy.exe",
+        "-lshell32"
+      ]
+    },
+    {
+      "platform": "linux-x64",
+      "target": "x86_64-linux-musl",
+      "bytes": 811240,
+      "sha256": "9ddd8797a60e5e3f243929ed9f81ce33faf36e5ac5811fba21a2293d304253e9",
+      "build_seconds": 8.124,
+      "runtime_tested_on_this_host": false,
+      "command": [
+        "zig",
+        "c++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "-s",
+        "-target",
+        "x86_64-linux-musl",
+        "native/image_proxy.cpp",
+        "-o",
+        "bin/linux-x64/image-proxy",
+        "-static"
+      ]
+    },
+    {
+      "platform": "linux-arm64",
+      "target": "aarch64-linux-musl",
+      "bytes": 764384,
+      "sha256": "78636b54a6e879ecdbf5a5afdbc0da9792e35f037f089ff1c6dd430bbc0898f7",
+      "build_seconds": 9.511,
+      "runtime_tested_on_this_host": false,
+      "command": [
+        "zig",
+        "c++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "-s",
+        "-target",
+        "aarch64-linux-musl",
+        "native/image_proxy.cpp",
+        "-o",
+        "bin/linux-arm64/image-proxy",
+        "-static"
+      ]
+    },
+    {
+      "platform": "windows-arm64",
+      "target": "aarch64-windows-gnu",
+      "bytes": 656896,
+      "sha256": "a5fc770975663b05c55be75d60efcf137212e17eccecc27727c72ab191dd4972",
+      "build_seconds": 10.768,
+      "runtime_tested_on_this_host": false,
+      "command": [
+        "zig",
+        "c++",
+        "-std=c++17",
+        "-O3",
+        "-DNDEBUG",
+        "-s",
+        "-target",
+        "aarch64-windows-gnu",
+        "native/image_proxy.cpp",
+        "-o",
+        "bin/windows-arm64/image-proxy.exe",
+        "-lshell32"
+      ]
+    }
+  ]
+}

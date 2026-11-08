@@ -1,0 +1,43 @@
+image-proxy-first 2.0：原生程序先生成代理，再查看
+
+正常流程只有两次模型工具调用：
+1. 运行安装后 scripts/proxy.cmd（Windows）或 scripts/proxy（Ubuntu/Linux），传入图片。
+2. 直接用图像查看工具打开返回的必要代理路径。多图可通过一次工具批调用查看。
+尺寸计算、方向调整、解码、压缩、切图、体积校验和元信息生成全部在第一次命令内部完成。
+
+Windows：解压后双击 INSTALL.cmd。无需 Python、编译器、管理员权限或下载依赖。
+Ubuntu/Linux：解压后运行 bash install.sh。无需 Python 或编译器。
+安装时自动选择 Windows/Linux 的 x64 或 ARM64 预编译二进制。
+若已有同名技能，保留旧版本备份后更新：
+  Windows: powershell -NoProfile -ExecutionPolicy Bypass -File install.ps1 -ReplaceExisting
+  Ubuntu: bash install.sh --replace-existing
+安装后启动新 Codex 会话或重载技能列表。
+
+原生路径支持常见照片、位图、首帧动图，以及显式布局的 8/16 位工业原始数据。
+不支持的编解码器自动在同一条准备命令内回退 Python，缺失可选依赖则明确报错。
+若需要 Python 回退环境，请在安装时明确选择：
+  Windows: install.ps1 -WithPythonFallback
+  Ubuntu: bash install.sh --with-python-fallback
+需要手机高效格式和厂商相机原始文件解码器时，选择 -Extras 或 --extras。
+只有可选回退环境需要已有 Python 3.10+ 和首次联网下载依赖。视频另需 ffmpeg。
+
+无需指定输出目录；程序会自动建立新的临时目录。
+  proxy <图片>                                  默认：总览和适用重叠分图
+  proxy <图片> --preset fast                   仅快速总览
+  proxy <图片> --preset text --layout halves  重叠二分图
+  proxy <图片> --preset detail --layout grid  四宫格局部
+  proxy <图片> --layout strips                长图条带
+  proxy <图片> --layout all                   显式预生成全部常见分图
+  proxy <图片> --crop 100 200 1800 900         按旋转后原图坐标裁剪
+Windows 将 proxy 换成实际脚本路径 proxy.cmd，Linux 使用脚本 proxy。
+
+默认每张代理最多 240,000 字节，最长边 1600 像素；快速模式 96,000 字节/1280 像素。
+详细模式 300,000 字节/2048 像素。硬上限 500,000 字节。
+标准输出只有文字元信息、受限代理路径和可直接执行的方案参数数组，没有图像编码。
+只查看需要的代理，不把全部预生成局部图自动转发进模型上下文。
+不修改原始图像，不为提高速度跳过实际体积验证。
+
+完整自有 C++ 源码、固定第三方源码和许可、构建说明、构建摘要及实测报告均在 native/。
+Windows x64 在本机实际测试；Linux 和 ARM64 版本仅交叉编译及文件格式校验，未在目标系统运行。
+本机合成输入的实测性能仅供参考，不保证所有硬件、磁盘和格式的时延。
+技能是行为规则与本地工具，不是网络拦截插件，无法追溯压缩用户已经直接附在聊天中的图片。
